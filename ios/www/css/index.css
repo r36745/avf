@@ -1,0 +1,42 @@
+
+.divider-color{
+    color: red;
+    height: 75px;
+}
+#myBeer{
+    padding-top: 7%;
+    padding-left: 50%;
+    font-family: 'Chalkboard SE';
+    font-size: 20px;
+}
+#myBar{
+     padding-top: 7%;
+    padding-left: 50%;
+    font-family: 'Chalkboard SE';
+    font-size: 20px;
+}
+
+#bSocial{
+     padding-top: 7%;
+    padding-left: 50%;
+    font-family: 'Chalkboard SE';
+    font-size: 20px;
+}
+#domestic{
+    margin: 2%;
+}
+#foreign{
+    margin: 2%;
+}
+#walkable{
+    margin: 2%;
+}
+#tRide{
+    margin: 2%;
+}
+#bPix{
+    margin: 2%;
+}
+#mLocale{
+    margin: 2%;
+}
