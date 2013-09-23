@@ -1,49 +1,49 @@
-/*
- * Licensed to the Apache Software Foundation (ASF) under one
- * or more contributor license agreements.  See the NOTICE file
- * distributed with this work for additional information
- * regarding copyright ownership.  The ASF licenses this file
- * to you under the Apache License, Version 2.0 (the
- * "License"); you may not use this file except in compliance
- * with the License.  You may obtain a copy of the License at
- *
- * http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing,
- * software distributed under the License is distributed on an
- * "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
- * KIND, either express or implied.  See the License for the
- * specific language governing permissions and limitations
- * under the License.
- */
-var app = {
-    // Application Constructor
-    initialize: function() {
-        this.bindEvents();
-    },
-    // Bind Event Listeners
-    //
-    // Bind any events that are required on startup. Common events are:
-    // 'load', 'deviceready', 'offline', and 'online'.
-    bindEvents: function() {
-        document.addEventListener('deviceready', this.onDeviceReady, false);
-    },
-    // deviceready Event Handler
-    //
-    // The scope of 'this' is the event. In order to call the 'receivedEvent'
-    // function, we must explicity call 'app.receivedEvent(...);'
-    onDeviceReady: function() {
-        app.receivedEvent('deviceready');
-    },
-    // Update DOM on a Received Event
-    receivedEvent: function(id) {
-        var parentElement = document.getElementById(id);
-        var listeningElement = parentElement.querySelector('.listening');
-        var receivedElement = parentElement.querySelector('.received');
 
-        listeningElement.setAttribute('style', 'display:none;');
-        receivedElement.setAttribute('style', 'display:block;');
 
-        console.log('Received Event: ' + id);
-    }
+$(function() {
+  
+  
+  var bUrl = "http://api.brewerydb.com/v2/featured/?key=851b96f1795e0c133ec62aca2bc49ab4";
+  
+  $.getJSON(bUrl, beerOutput);
+  });
+
+var beerOutput = function(info) {
+    console.log(info);
+    $.each(info.data.brewery.images, function(index, photo){
+           console.log(info.data);
+           var beer = "<li><img src='" + photo + "'/></li>";
+           console.log(beer);
+           $("#beer-data").append(beer);
+           });
+    
+};
+
+
+$(function() {
+  var tag = "restaurant",
+  
+  url = "https://api.instagram.com/v1/tags/" + tag + "/media/recent?callback=?&amp;client_id=134427b420784a59ad7cddba9e547892";
+  
+  $.getJSON(url, screenOutput);
+  });
+
+
+
+var screenOutput = function(bStats) {
+	
+    
+	$.each(bStats.data, function(index, photo) {
+           
+           
+           var pic = "<li><img src ='" + photo.images.standard_resolution.url + "' alt='" + photo.user.id + "'/><li>";
+           console.log(pic);
+           $("#data-msg").append(pic);
+           });
+    
+    
+    
+    
+    
+    
 };
