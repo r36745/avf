@@ -1,4 +1,8 @@
 
+/* Steven Roseman*/
+/* 1309*/
+/* AVF Demo App Pt One*/
+/* 9/24/13*/
 
 $(function() {
   
